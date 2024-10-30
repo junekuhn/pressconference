@@ -8,9 +8,15 @@ html, body {
     background-color: black;
 }
 
+h1, h3 {
+    margin: auto;
+}
+
 .button-container {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    color: white;
     top: 0%;
     left: 0%;
     width: 100vw;

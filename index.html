@@ -11,7 +11,9 @@
     </head>
     <body>
         <div class="button-container">
+            <h1>Press Conference</h1>
             <button id="play-button">PLAY</button>
+            <h3>June Kuhn, 2024</h3>
         </div>
         <div class="teleprompter">
             <div>
@@ -43,7 +45,7 @@
                 <p class="answer" tabindex="0">That depends, are you scared?</p>
             </div>
             <div>
-                <p class="question" aria-hidden="true">I didn’t do anything wrong, why do I have to suffer?</p>
+                <p class="question" aria-hidden="true">We didn’t do anything wrong, why do we have to suffer?</p>
                 <p class="answer" tabindex="0">~stare longingly, and offer a wink to the audience~ Baby, it’s always been about you.</p>
             </div>
             <div>
@@ -64,7 +66,7 @@
             </div>
             <div>
                 <p class="question" aria-hidden="true">Sounds like you want to take over the world.</p>
-                <p class="answer" tabindex="0">You people are the kinksters actually, everything has to do with who’s dominating who. Well, when we take power and control of all places and peoples, as a singular group who obviously know better than everyone else, the first decree will be for all scientists to wear wizard hats and all magicians to wear lab coats. Seriously, to my magicmakers, have you ever listened to a stethoscope? I can’t imagine a more mystical device.</p>
+                <p class="answer" tabindex="0">You people are the kinksters, really, everything has to do with who’s dominating who. Well, when we take power and control of all places and peoples, as a singular group who obviously know better than everyone else, the first decree will be for all scientists to wear wizard hats and all magicians to wear lab coats. Seriously, to my magicmakers, have you ever listened to a stethoscope? I can’t imagine a more mystical device.</p>
             </div>
             <div>
                 <p class="question" aria-hidden="true">How would you make everyone happy?</p>
@@ -79,7 +81,7 @@
                 <p class="answer" tabindex="0">I’d like to think of myself as a stand-up comedian.</p>
             </div>
         </div>
-        <audio id="audiofile" src="pressconference.wav" autoplay="false" style="display: none;"></audio>
+        <audio id="audiofile" src="pressconference.wav" autostart="0" style="display: none;"></audio>
         <script>
 
             let scrollPosition = 0;
@@ -112,7 +114,7 @@
 
                 //detect end of scrolling
                 console.log(window.scrollY + window.innerHeight, element.scrollHeight)
-                if (window.scrollY + window.innerHeight >= element.scrollHeight) {
+                if (window.scrollY + window.innerHeight >= element.scrollHeight + 500) {
                     reset(5000);
                 }
             }
