@@ -86,12 +86,29 @@
 
             let scrollPosition = 0;
             let scrollAnimation;
+            //desktop
+            let scrollSpeed = 2;
             let startTimeout;
             let teleprompter = document.querySelector(".teleprompter")
             let buttonContainer = document.querySelector(".button-container")
             let audiofile = document.querySelector("#audiofile")
             let audioCtx = new AudioContext();
             let paused = false;
+            let screenWidth = window.innerWidth;
+
+            console.log(screenWidth)
+
+            //was 1.5
+            if(screenWidth < 500) {
+                console.log("mobile")
+                scrollSpeed = 1.3
+            } else if (screenWidth < 1000) {
+                console.log("tablet")
+                scrollSpeed = 2.8;
+            } else {
+                console.log("desktop")
+                scrollSpeed = 2;
+            }
 
 
             function scroll() {
@@ -103,8 +120,7 @@
                     behavior: "smooth"
                 })
 
-                //was 1.5
-                scrollPosition += 2;
+                scrollPosition += scrollSpeed;
 
                 let element = document.body
 
@@ -114,7 +130,7 @@
 
                 //detect end of scrolling
                 console.log(window.scrollY + window.innerHeight, element.scrollHeight)
-                if (window.scrollY + window.innerHeight >= element.scrollHeight + 500) {
+                if (window.scrollY + window.innerHeight >= element.scrollHeight) {
                     reset(5000);
                 }
             }
