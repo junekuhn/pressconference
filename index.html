@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Press Conference Teleprompter</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Teleprompter">
+        <meta name="keywords" content="">
+        <meta name="author" content="June Kuhn">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="button-container">
+            <button id="play-button">PLAY</button>
+        </div>
+        <div class="teleprompter">
+            <div>
+                <p class="question" aria-hidden="true">Why did you release maggots into the Reform Party Banquet?</p>
+                <p class="answer" tabindex="0">An otherwise delicious snack would end up flying away, eventually.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Polls show that the public disapproves of these actions, like supergluing a leather gag to the busts of historic slave traders.</p>
+                <p class="answer" tabindex="0">Great question, I appreciate you asking.  It’s not like we’re misunderstood artists or anything. It’s that these heads seem to keep talking and talking after centuries of being dead.  Someone had to shut them up so we decided to take this upon ourselves in the end.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Do you consider this mockery, what you call activism, successful when you cause pain and disruption?</p>
+                <p class="answer" tabindex="0">I think we were very successful, the team pulled through by putting in the long hours, dedicated training, and sacrifice. And that’s how we get results.  We penetrated the other team’s defenses and thanks to leadership and core values we made the impossible possible.  I’d like to take this opportunity to thank God as well for his hand in contribution.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Do you believe in God?</p>
+                <p class="answer" tabindex="0">That which cannot be understood must be interpreted through vague irony.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Ok, how then does jamming Sky News with softcore lesbian porn help your case?</p>
+                <p class="answer" tabindex="0">I don’t know if you noticed, but their ratings went up.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">How could someone with a penis identify as a woman?</p>
+                <p class="answer" tabindex="0">To be fair, you have to have a very high IQ to understand Rick and Morty.  The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Are you a terrorist?</p>
+                <p class="answer" tabindex="0">That depends, are you scared?</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">I didn’t do anything wrong, why do I have to suffer?</p>
+                <p class="answer" tabindex="0">~stare longingly, and offer a wink to the audience~ Baby, it’s always been about you.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Why don’t you support Israel’s right to exist?</p>
+                <p class="answer" tabindex="0">There, upon burning bodies, bombed hospitals, and unmarked graves, is clearly a label of Israel. Existence is a cruel, unforgiving joke sometimes.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">They have hostages, our hands are tied.</p>
+                <p class="answer" tabindex="0">What, I wonder, is a hostage?  How does one become a hostage, and whose hands are tied?  Is it a person, a population, a political position?</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">The Mold Syndicate, that’s a catchy title, where does that come from? Is it like the fungus or something else?</p>
+                <p class="answer" tabindex="0">To you we are a vile disgusting overgrowth of unwanted life and you’ll continue seeing us that way as long as you keep buying all those foods you don’t eat. But if you look a bit closer you can start observing our mycelial connections as an essential part of our ecosystem. The mold as shape, the mold as hollowness, the mold as template, the mold as character, the mold as architecture, the mold as weird tangy blue bits of questionable origin, the mold as loose earth, the mold as sickening pest, the mold as sign of a decaying planet, ripe, wet, and fertile for new growth and emergent structure.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Where do your secret meetings take place?</p>
+                <p class="answer" tabindex="0">Betwixt the love triangle of Sun, Moon, and Stars. Behind vine-covered doors of polyamorous entanglements. Below the sex dungeons filled with kinky rabbits.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Sounds like you want to take over the world.</p>
+                <p class="answer" tabindex="0">You people are the kinksters actually, everything has to do with who’s dominating who. Well, when we take power and control of all places and peoples, as a singular group who obviously know better than everyone else, the first decree will be for all scientists to wear wizard hats and all magicians to wear lab coats. Seriously, to my magicmakers, have you ever listened to a stethoscope? I can’t imagine a more mystical device.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">How would you make everyone happy?</p>
+                <p class="answer" tabindex="0">The happiness machine, of course! In goes all your silly problems, those wretched, ugly people you don’t like, and every inconvenience you can’t buy away.  Out springs chemical enlightenment.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Wouldn’t the revolution be a violent, bloody mess?</p>
+                <p class="answer" tabindex="0">Trees milled, mulched by the woodpecker. Seeds pried, split by the wildfire. Electric daggers striking through air.  Intestinal debris of spurting magma.  First-degree murder of the male spider.  A transformative act of violence can be a terrible, terrific thing.  Squeeze the block of aluminium into a baking sheet.  Smash the dough with greedy fists until its lifeless mass stops resisting.  Roast the lump until its body bulges and rips.  Slice the bread with the largest knife in sight. Community, is served.</p>
+            </div>
+            <div>
+                <p class="question" aria-hidden="true">Are you a terrorist?</p>
+                <p class="answer" tabindex="0">I’d like to think of myself as a stand-up comedian.</p>
+            </div>
+        </div>
+        <audio id="audiofile" src="pressconference.wav" autoplay="false" style="display: none;"></audio>
+        <script>
+
+            let scrollPosition = 0;
+            let scrollAnimation;
+            let startTimeout;
+            let teleprompter = document.querySelector(".teleprompter")
+            let buttonContainer = document.querySelector(".button-container")
+            let audiofile = document.querySelector("#audiofile")
+            let audioCtx = new AudioContext();
+            let paused = false;
+
+
+            function scroll() {
+
+                // window.focus();
+                window.scrollTo({
+                    top: scrollPosition,
+                    left: 0,
+                    behavior: "smooth"
+                })
+
+                //was 1.5
+                scrollPosition += 2;
+
+                let element = document.body
+
+                if(paused) {
+                    pause();
+                }
+
+                //detect end of scrolling
+                console.log(window.scrollY + window.innerHeight, element.scrollHeight)
+                if (window.scrollY + window.innerHeight >= element.scrollHeight) {
+                    reset(5000);
+                }
+            }
+
+            function start(time = 5000) {
+                document.querySelector(".button-container").style.zIndex = -100;
+                teleprompter.style.display = "block";
+                buttonContainer.style.display = "none";
+
+                audiofile.play();
+
+                startTimeout = setTimeout(() => {
+
+                    if(scrollAnimation) {
+                        clearInterval(scrollAnimation)
+                    }
+                    scrollAnimation = setInterval(scroll, 80);
+                }, time)
+            }
+
+            function reset(time=0) {
+                clearInterval(scrollAnimation); 
+                scrollAnimation = null;
+                clearTimeout(startTimeout);
+                scrollPosition = 0;
+                teleprompter.style.display = "none";
+                buttonContainer.style.display = "flex";
+                audiofile.pause();
+                audiofile.currentTime = 0;
+
+                setTimeout(() => {
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "instant"
+                })
+
+
+                }, time);
+            }
+
+            function pause() {
+                clearInterval(scrollAnimation);
+                audiofile.pause();
+            }
+
+            // disable user scrolling
+            var supportsPassive = false;
+            try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () { supportsPassive = true; } 
+            }));
+            } catch(e) {}
+            var wheelOpt = supportsPassive ? { passive: false } : false;
+            window.addEventListener("touchmove", (e) => {
+                e.preventDefault();
+            }, wheelOpt);
+            window.addEventListener("wheel", (e) => {
+                e.preventDefault();
+            }, wheelOpt);
+
+            document.querySelector("#play-button").addEventListener("click",() => start(5000))
+
+            window.addEventListener("keydown", (e) => {
+                if(e.key == "r") {
+                    reset();
+                } else if (e.key == "p") {
+                    if(scrollAnimation) {
+                        if(paused) start(0);
+                        paused = !paused;
+                    }
+                }
+            })
+
+        </script>
+    </body>
+</html>
+
