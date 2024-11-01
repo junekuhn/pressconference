@@ -107,11 +107,17 @@
                 scrollSpeed = 2.8;
             } else {
                 console.log("desktop")
-                scrollSpeed = 2;
+
+                scrollSpeed = 2.461;
             }
 
 
             function scroll() {
+
+                let sc = (371.0 / 0.08).toFixed(2);
+                scrollSpeed = document.body.scrollHeight/sc
+
+
 
                 // window.focus();
                 window.scrollTo({
