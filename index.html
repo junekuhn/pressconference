@@ -135,8 +135,8 @@
                 }
 
                 //detect end of scrolling
-                console.log(window.scrollY + window.innerHeight, element.scrollHeight)
-                if (window.scrollY + window.innerHeight/2 >= element.scrollHeight) {
+                // console.log(window.scrollY + window.innerHeight, element.scrollHeight)
+                if (window.scrollY + window.innerHeight >= element.scrollHeight) {
                     reset(5000);
                 }
             }
@@ -162,8 +162,8 @@
                 scrollAnimation = null;
                 clearTimeout(startTimeout);
                 scrollPosition = 0;
-                teleprompter.style.display = "none";
-                buttonContainer.style.display = "flex";
+                // teleprompter.style.display = "none";
+                // buttonContainer.style.display = "flex";
                 audiofile.pause();
                 audiofile.currentTime = 0;
 
@@ -175,6 +175,7 @@
                     behavior: "instant"
                 })
 
+                start(0);
 
                 }, time);
             }
@@ -184,20 +185,20 @@
                 audiofile.pause();
             }
 
-            // // disable user scrolling
-            // var supportsPassive = false;
-            // try {
-            // window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-            //     get: function () { supportsPassive = true; } 
-            // }));
-            // } catch(e) {}
-            // var wheelOpt = supportsPassive ? { passive: false } : false;
-            // window.addEventListener("touchmove", (e) => {
-            //     e.preventDefault();
-            // }, wheelOpt);
-            // window.addEventListener("wheel", (e) => {
-            //     e.preventDefault();
-            // }, wheelOpt);
+            // disable user scrolling
+            var supportsPassive = false;
+            try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () { supportsPassive = true; } 
+            }));
+            } catch(e) {}
+            var wheelOpt = supportsPassive ? { passive: false } : false;
+            window.addEventListener("touchmove", (e) => {
+                e.preventDefault();
+            }, wheelOpt);
+            window.addEventListener("wheel", (e) => {
+                e.preventDefault();
+            }, wheelOpt);
 
             document.querySelector("#play-button").addEventListener("click",() => start(5000))
 
