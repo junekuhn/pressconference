@@ -66,7 +66,7 @@
             </div>
             <div>
                 <p class="question" aria-hidden="true">Sounds like you want to take over the world.</p>
-                <p class="answer" tabindex="0">You people are the kinksters, really, everything has to do with who’s dominating who. Well, when we take power and control of all places and peoples, as a singular group who obviously know better than everyone else, the first decree will be for all scientists to wear wizard hats and all magicians to wear lab coats. Seriously, to my magicmakers, have you ever listened to a stethoscope? I can’t imagine a more mystical device.</p>
+                <p class="answer" tabindex="0">You people are the kinksters, really, everything has to do with who’s dominating who. Well, when we take power and control of all places and peoples, as a singular group who obviously know better than everyone else, the first decree will be for all doctors to wear wizard hats and all magicians to wear lab coats. Seriously, to my magicmakers, have you ever listened to a stethoscope? I can’t imagine a more mystical device.</p>
             </div>
             <div>
                 <p class="question" aria-hidden="true">How would you make everyone happy?</p>
@@ -115,7 +115,7 @@
             function scroll() {
 
                 let sc = (371.0 / 0.08).toFixed(2);
-                scrollSpeed = document.body.scrollHeight/sc - 0.04;
+                scrollSpeed = document.body.scrollHeight/sc - 0.06;
 
 
 
@@ -136,7 +136,7 @@
 
                 //detect end of scrolling
                 console.log(window.scrollY + window.innerHeight, element.scrollHeight)
-                if (window.scrollY + window.innerHeight >= element.scrollHeight) {
+                if (window.scrollY + window.innerHeight/2 >= element.scrollHeight) {
                     reset(5000);
                 }
             }
@@ -184,20 +184,20 @@
                 audiofile.pause();
             }
 
-            // disable user scrolling
-            var supportsPassive = false;
-            try {
-            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-                get: function () { supportsPassive = true; } 
-            }));
-            } catch(e) {}
-            var wheelOpt = supportsPassive ? { passive: false } : false;
-            window.addEventListener("touchmove", (e) => {
-                e.preventDefault();
-            }, wheelOpt);
-            window.addEventListener("wheel", (e) => {
-                e.preventDefault();
-            }, wheelOpt);
+            // // disable user scrolling
+            // var supportsPassive = false;
+            // try {
+            // window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+            //     get: function () { supportsPassive = true; } 
+            // }));
+            // } catch(e) {}
+            // var wheelOpt = supportsPassive ? { passive: false } : false;
+            // window.addEventListener("touchmove", (e) => {
+            //     e.preventDefault();
+            // }, wheelOpt);
+            // window.addEventListener("wheel", (e) => {
+            //     e.preventDefault();
+            // }, wheelOpt);
 
             document.querySelector("#play-button").addEventListener("click",() => start(5000))
 
